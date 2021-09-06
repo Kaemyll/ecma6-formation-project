@@ -1,1 +1,3 @@
-console.log("Hello !");
+const trucBidule = "helloxxxx";
+
+console.log(trucBidule);
