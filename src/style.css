@@ -1,4 +1,6 @@
 body {
+  font-family: sans-serif;
+  margin: 0;
   display: grid;
   grid-template-columns: 3em auto;
   grid-template-rows: 3em auto 3em;
@@ -12,20 +14,51 @@ body {
 
 header {
   grid-area: header;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
 }
 
 aside {
+  margin: 0;
   grid-area: aside;
+  background-color: #eee;
+}
+
+aside nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+aside button {
+  margin: 0.3em;
+  width: 3em;
+  height: 3em;
 }
 
 main {
   grid-area: main;
+  display: flex;
+  flex-flow: column;
+}
+
+main .svg {
+  flex-grow: 1;
+  background: #ddd;
+}
+
+main .status {
+  display: flex;
+  align-items: center;
+  height: 2em;
 }
 
 footer {
   grid-area: footer;
-}
-
-h1 {
-  color: blue;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
