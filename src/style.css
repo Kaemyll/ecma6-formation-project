@@ -1,3 +1,31 @@
+body {
+  display: grid;
+  grid-template-columns: 3em auto;
+  grid-template-rows: 3em auto 3em;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  grid-area: header;
+}
+
+aside {
+  grid-area: aside;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
 h1 {
   color: blue;
 }
