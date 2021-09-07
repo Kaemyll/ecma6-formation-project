@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/svgEditor.png" type="image/png" />
     <title>SVG Editor</title>
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/svg" />
   </head>
   <body>
     <header>
@@ -13,23 +13,39 @@
     </header>
     <aside>
       <nav>
-        <button class="addLine">
-          <img src="assets/line.svg" alt="ligne" />
+        <button class="add-line">
+          <img src="assets/line.svg" alt="Add Line" />
         </button>
-        <button class="addCircle">
-          <img src="assets/circle.svg" alt="cercle" />
+        <button class="add-circle">
+          <img src="assets/circle.svg" alt="Add Circle" />
         </button>
-        <button class="eraseObject">
-          <img src="assets/cross.svg" alt="croix" />
+        <button class="erase-object">
+          <img src="assets/erase.svg" alt="Erase object" />
         </button>
       </nav>
     </aside>
     <main>
-      <div class="svg">ECRAN PRINCIPAL</div>
-      <div class="status">BARRE DE STATUS</div>
+      <svg class="svg">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="black"
+          stroke-width="3"
+          fill="yellow"
+        />
+        <line
+          x1="0"
+          y1="0"
+          x2="200"
+          y2="200"
+          style="stroke: rgb(255, 0, 0); stroke-width: 2"
+        />
+      </svg>
+      <div class="status">barre de status</div>
     </main>
     <footer>
-      <a href="#">Mentions légales</a>
+      <a href="#">Mentions Légales</a>
     </footer>
   </body>
 </html>
