@@ -11,6 +11,7 @@ export class DrawingBoard {
     const elt = document.querySelector(".status");
     elt.innerHTML = val;
   }
+
   constructor() {
     this.state = STATE.DEFAULT;
   }
