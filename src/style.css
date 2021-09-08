@@ -56,14 +56,19 @@ main {
   flex-flow: column;
 }
 
-main .svg {
+main svg.svg {
   flex-grow: 1;
   background: #ddd;
 }
 
-main .status {
+main svg.svg.insert {
+  cursor: crosshair;
+}
+
+main .status-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 2em;
 }
 
