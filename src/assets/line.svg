@@ -1,0 +1,8 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+ <title>Line</title>
+
+ <g>
+  <title>Layer 1</title>
+  <line stroke-width="10" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="123" x2="123" y1="6" x1="6" stroke="#000" fill="none"/>
+ </g>
+</svg>
