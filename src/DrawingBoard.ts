@@ -1,4 +1,5 @@
 import { getPosition } from "./utils";
+import { Widget } from "./Widget";
 
 export const STATE = {
   DEFAULT: "default",
@@ -8,6 +9,10 @@ export const STATE = {
 };
 
 export class DrawingBoard {
+  cursorPosElt: any;
+  private _state: any;
+  curPos: { x: number; y: number; };
+  widgetBeingInserted: Widget;
   set state(val) {
     console.log("val: ", val);
     const elt = document.querySelector(".status");
@@ -46,7 +51,7 @@ export class DrawingBoard {
     });
   }
 
-  insertStart(widget) {
+  insertStart(widget: Widget) {
     console.log("startToInsert");
     this.state = STATE.INSERT;
     this.widgetBeingInserted = widget;
