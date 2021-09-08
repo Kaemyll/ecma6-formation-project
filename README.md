@@ -8,7 +8,7 @@ Draw svg with geometric simpliest shapes.
 
 ## Usage
 
-...
+Illustration for purpose of ECMA6 formation (ORSYS)
 
 ## Development
 
