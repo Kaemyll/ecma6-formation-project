@@ -1,5 +1,7 @@
 export class Menu {
-  add(selector: string, callback: any) {
+  // #region Public Methods (1)
+
+  public add(selector: string, callback: any) {
     const elt = document.querySelector(selector);
 
     if (!elt) {
@@ -8,4 +10,6 @@ export class Menu {
 
     elt.addEventListener("click", callback);
   }
+
+  // #endregion Public Methods (1)
 }

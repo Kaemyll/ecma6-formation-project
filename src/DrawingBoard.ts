@@ -10,24 +10,18 @@ export const STATE = {
 };
 
 export class DrawingBoard {
-  cursorPosElt: any;
-  private _state: any;
-  curPos: Point = { x: 0, y: 0 };
-  widgetBeingInserted!: Widget;
-  svgElt: SVGElement;
-  set state(val) {
-    console.log("val: ", val);
-    const elt = document.querySelector(".status") as HTMLElement;
-    elt.innerHTML = val;
-    this.svgElt.setAttribute("class", "svg");
-    this.svgElt.classList.add(val);
-    this.cursorPosElt.innerHTML = "";
-    this._state = val;
-  }
+  // #region Properties (5)
 
-  get state() {
-    return this._state;
-  }
+  private _state: any;
+
+  public curPos: Point = { x: 0, y: 0 };
+  public cursorPosElt: any;
+  public svgElt: SVGElement;
+  widgetBeingInserted!: Widget;
+
+  // #endregion Properties (5)
+
+  // #region Constructors (1)
 
   constructor() {
     this.svgElt = document.querySelector("svg.svg") as SVGElement;
@@ -53,16 +47,40 @@ export class DrawingBoard {
     });
   }
 
-  insertStart(widget: Widget) {
-    console.log("startToInsert");
-    this.state = STATE.INSERT;
-    this.widgetBeingInserted = widget;
+  // #endregion Constructors (1)
+
+  // #region Public Accessors (2)
+
+  public get state() {
+    return this._state;
   }
 
-  insertEnd() {
+  public set state(val) {
+    console.log("val: ", val);
+    const elt = document.querySelector(".status") as HTMLElement;
+    elt.innerHTML = val;
+    this.svgElt.setAttribute("class", "svg");
+    this.svgElt.classList.add(val);
+    this.cursorPosElt.innerHTML = "";
+    this._state = val;
+  }
+
+  // #endregion Public Accessors (2)
+
+  // #region Public Methods (2)
+
+  public insertEnd() {
     console.log("insertEnd");
     this.state = STATE.DEFAULT;
     console.log("this.widgetBeingInserted: ", this.widgetBeingInserted);
     this.widgetBeingInserted.depose(this);
   }
+
+  public insertStart(widget: Widget) {
+    console.log("startToInsert");
+    this.state = STATE.INSERT;
+    this.widgetBeingInserted = widget;
+  }
+
+  // #endregion Public Methods (2)
 }
