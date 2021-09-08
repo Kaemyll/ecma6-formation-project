@@ -4,7 +4,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: "./src/main.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
     clean: true,
@@ -28,6 +28,11 @@ module.exports = {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
     ],
   },
   devServer: {
@@ -36,5 +41,8 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
 };

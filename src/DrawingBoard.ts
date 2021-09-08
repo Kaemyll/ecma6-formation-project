@@ -40,6 +40,7 @@ export class DrawingBoard {
       if (this.state === STATE.INSERT) {
         // on affiche les coordonnees.
         const { x, y } = getPosition(event);
+        this.curPos = { x, y };
         this.cursorPosElt.innerHTML = `position: { x: ${x}, y: ${y}}`;
       }
     });
@@ -48,10 +49,12 @@ export class DrawingBoard {
   insertStart(widget) {
     console.log("startToInsert");
     this.state = STATE.INSERT;
+    this.widgetBeingInserted = widget;
   }
 
   insertEnd() {
     console.log("insertEnd");
     this.state = STATE.DEFAULT;
+    this.widgetBeingInserted.depose(this.curPos);
   }
 }
